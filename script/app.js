@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const allSeat = document.getElementsByClassName('seat');
 let count = 24;
 let seatCount = 0;
+let payTotal = 0;
 
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
@@ -38,6 +39,14 @@ for (const seat of allSeat) {
         createDiv.classList.add('flex', 'justify-between', )
 
         appendDiv.appendChild(createDiv);
+
+        // total price calculation part
+        payTotal = payTotal + 550;
+        // console.log(payTotal);
+        let priceTotal = document.getElementById('price-total');
+        
+        priceTotal.innerText = payTotal;
+
 
     });
 }
