@@ -10,24 +10,25 @@
 </head>
 
 <body>
-    <header>
-        <section class="flex justify-around items-center mt-12">
-            <div>
-                <h3 class="text-4xl font-bold text-black">P-Ticket</h3>
-            </div>
-            <div class="flex gap-20">
-                <p>Home</p>
-                <p>About</p>
-                <p>Destination</p>
-                <p>Search</p>
-            </div>
-            <div>
-                <button class="btn text-xl text-green-400 bg-[#1DD10019]">Bus <span><img src="images/bus-icon.png"
-                            alt=""></span></button>
-            </div>
-        </section>
-    </header>
-    <main>
+    
+    <main id="main-section">
+        <header>
+            <section class="flex justify-around items-center mt-12">
+                <div>
+                    <h3 class="text-4xl font-bold text-black">P-Ticket</h3>
+                </div>
+                <div class="flex gap-20">
+                    <p>Home</p>
+                    <p>About</p>
+                    <p>Destination</p>
+                    <p>Search</p>
+                </div>
+                <div>
+                    <button class="btn text-xl text-green-400 bg-[#1DD10019]">Bus <span><img src="images/bus-icon.png"
+                                alt=""></span></button>
+                </div>
+            </section>
+        </header>
         <!-- bannar section -->
         <section class="mt-12">
             <div class="">
@@ -301,14 +302,14 @@
                     </div>
                     <!-- have a coupon -->
                     <div class="bg-white flex justify-between items-center mt-6">
-                        <input class="p-3 rounded-xl" type="text" placeholder="Have a coupon?">
-                        <button class="btn bg-[#1DD100] text-white">Apply</button>
+                        <input id="coupon-input" class="p-3 rounded-xl" type="text" placeholder="Have a coupon?">
+                        <button id="apply-btn" class="btn bg-[#1DD100] text-white">Apply</button>
                     </div>
                     <!-- Grand total -->
                     
                     <div class="flex justify-between mt-6">
                         <h3 class="text-xl font-bold">Grand Total</h3>
-                        <p class="text-lg font-bold">BDT 00</p>
+                        <p class="text-lg font-bold">BDT <span id="grand-total">00</span></p>
 
                     </div>
                     <div class="mt-12">
@@ -327,7 +328,7 @@
                     </div>
                     <hr class="mt-2">
                     <div class="mt-4">
-                        <button class="btn w-full bg-[#1DD100] text-white">Next</button>
+                        <button id="next-btn" class="btn w-full bg-[#1DD100] text-white">Next</button>
                     </div>
                     <div class="flex justify-between mt-6">
                         <p class="border-b-2">Terms and Conditions</p>
@@ -339,6 +340,17 @@
             </div>
         </section>
     </main>
+    <!-- After purchase modal section -->
+    <section id="modal-section" class="hidden text-center bg-gray-100 w-3/4 mx-auto mt-12 mb-12 p-12 rounded-xl ">
+        <div class="text-center mx-auto flex justify-center">
+            <img src="images/success.png" alt="">
+        </div>
+        <h3 class=" text-green-500 font-semibold text-2xl mb-6 mt-4">SUCCESS</h3>
+        <h2 class="text-lg font-medium">Thank you for Booking Our Bus Seats. 
+            We are working hard to find the best service and deals for you</h2>
+            <p class="text-xl mt-3">Shortly you will find a confirmation in your email.</p>
+            <button id="continue-btn" class="btn text-white bg-green-500 p-3 rounded-2xl w-64 mt-8">Continue</button>
+    </section>
     <footer>
 
     </footer>

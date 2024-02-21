@@ -30,23 +30,52 @@ for (const seat of allSeat) {
         price.innerText = '550';
         createSeat.setAttribute('class', 'text-xl',);
         createSeat.innerText = seat.innerText;
-        
+
 
         createDiv.appendChild(createSeat);
         createDiv.appendChild(post);
         createDiv.appendChild(price);
 
-        createDiv.classList.add('flex', 'justify-between', )
+        createDiv.classList.add('flex', 'justify-between',)
 
         appendDiv.appendChild(createDiv);
 
         // total price calculation part
         payTotal = payTotal + 550;
         // console.log(payTotal);
-        let priceTotal = document.getElementById('price-total');
-        
-        priceTotal.innerText = payTotal;
+        const priceTotal = document.getElementById('price-total');
+        const grandTotal = document.getElementById('grand-total');
 
+        priceTotal.innerText = payTotal;
+        grandTotal.innerText = payTotal;
+        // coupon section
+        const applyCoupon = document.getElementById('apply-btn').addEventListener('click', function () {
+
+            const couponInput = document.getElementById('coupon-input');
+            const grandTotal = document.getElementById('grand-total');
+            
+            
+            if (couponInput.innerText = 'NEW15') {
+                const payTotal1 = (payTotal * 15)/100
+                grandTotal.innerText = payTotal - payTotal1;
+                
+            }
+        })
 
     });
 }
+
+const nextBtn = document.getElementById('next-btn').addEventListener('click', function(){
+    const mainSection = document.getElementById('main-section');
+    mainSection.classList.add('hidden');
+
+    const modal = document.getElementById('modal-section');
+    modal.classList.remove('hidden');
+
+    const continueButton = document.getElementById('continue-btn').addEventListener('click', function(){
+        mainSection.classList.remove('hidden');
+        modal.classList.add('hidden');
+    })
+
+})
+
