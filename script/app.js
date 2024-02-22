@@ -19,8 +19,11 @@ for (const seat of allSeat) {
         document.getElementById('seats-left').innerText = count;
         seatCount = seatCount + 1;
         document.getElementById('seat-count').innerText = seatCount;
+
+
         // create element
         const appendDiv = document.getElementById('append-div');
+
 
         const createDiv = document.createElement('div')
         const createSeat = document.createElement('p')
@@ -38,7 +41,9 @@ for (const seat of allSeat) {
 
         createDiv.classList.add('flex', 'justify-between',)
 
+
         appendDiv.appendChild(createDiv);
+
 
         // total price calculation part
         payTotal = payTotal + 550;
@@ -50,29 +55,38 @@ for (const seat of allSeat) {
         grandTotal.innerText = payTotal;
         // coupon section
         const applyCoupon = document.getElementById('apply-btn').addEventListener('click', function () {
-
             const couponInput = document.getElementById('coupon-input');
             const grandTotal = document.getElementById('grand-total');
-            
-            
-            if (couponInput.innerText = 'NEW15') {
-                const payTotal1 = (payTotal * 15)/100
+
+
+            if (couponInput.value === 'NEW15') {
+                const payTotal1 = (payTotal * 15) / 100
                 grandTotal.innerText = payTotal - payTotal1;
-                
+                return grandTotal.innerText;
+
+            }
+            else if (couponInput.value === 'COUPLE20') {
+                const payTotal2 = (payTotal * 20) / 100;
+                grandTotal.innerText = payTotal - payTotal2;
+            }
+            else {
+
+                payTotal === grandTotal;
             }
         })
 
     });
 }
 
-const nextBtn = document.getElementById('next-btn').addEventListener('click', function(){
+const nextBtn = document.getElementById('next-btn').addEventListener('click', function () {
+
     const mainSection = document.getElementById('main-section');
     mainSection.classList.add('hidden');
 
     const modal = document.getElementById('modal-section');
     modal.classList.remove('hidden');
 
-    const continueButton = document.getElementById('continue-btn').addEventListener('click', function(){
+    const continueButton = document.getElementById('continue-btn').addEventListener('click', function () {
         mainSection.classList.remove('hidden');
         modal.classList.add('hidden');
     })
