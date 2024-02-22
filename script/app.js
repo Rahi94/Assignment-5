@@ -21,7 +21,10 @@ for (const seat of allSeat) {
         document.getElementById('seats-left').innerText = count;
         seatCount = seatCount + 1;
         document.getElementById('seat-count').innerText = seatCount;
-        // return seat;
+        if(seatCount > 4){
+         alert('you can select maximum 4 seat!!!')  
+         return seat; 
+        }
 
 
         // create element
@@ -74,8 +77,10 @@ for (const seat of allSeat) {
                 const couponDiv = document.getElementById('coupon-div');
                 couponDiv.classList.add('hidden');
                 return grandTotal.innerText;
+                
 
             }
+            
             
             else if (couponInput.value === 'COUPLE20') {
                 const payTotal2 = (payTotal * 20) / 100;
@@ -90,6 +95,7 @@ for (const seat of allSeat) {
         })
 
     });
+    
 
     
     
