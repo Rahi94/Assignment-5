@@ -105,6 +105,12 @@ for (const seat of allSeat) {
 // next button
 const nextBtn = document.getElementById('next-btn').addEventListener('click', function () {
 
+
+    const purchasedPrice = document.getElementById('price-total');
+    const purchaseString = purchasedPrice.innerText;
+    const purchase = parseInt(purchaseString);
+
+
     const phoneNumber = document.getElementById('phone-number')
 
     const mainSection = document.getElementById('main-section');
