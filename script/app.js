@@ -14,17 +14,18 @@ let payTotal = 0;
 
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
+        if (seatCount > 3) {
+            alert('you can select maximum 4 seat!!!')
+            return seat;
+        }
         seat.classList.add('bg-green-400');
-        
-        
+
+
         count = count - 1;
         document.getElementById('seats-left').innerText = count;
         seatCount = seatCount + 1;
         document.getElementById('seat-count').innerText = seatCount;
-        if(seatCount > 4){
-         alert('you can select maximum 4 seat!!!')  
-         return seat; 
-        }
+
 
 
         // create element
@@ -45,12 +46,10 @@ for (const seat of allSeat) {
         createDiv.appendChild(post);
         createDiv.appendChild(price);
 
+        seat.classList.add('pointer-events-none')
+
         createDiv.classList.add('flex', 'justify-between',)
-
-
         appendDiv.appendChild(createDiv);
-        
-
 
         // total price calculation part
         payTotal = payTotal + 550;
@@ -60,8 +59,8 @@ for (const seat of allSeat) {
 
         priceTotal.innerText = payTotal;
         grandTotal.innerText = payTotal;
-        
-        
+
+
         // coupon section
         const applyCoupon = document.getElementById('apply-btn').addEventListener('click', function () {
             const couponInput = document.getElementById('coupon-input');
@@ -77,11 +76,11 @@ for (const seat of allSeat) {
                 const couponDiv = document.getElementById('coupon-div');
                 couponDiv.classList.add('hidden');
                 return grandTotal.innerText;
-                
+
 
             }
-            
-            
+
+
             else if (couponInput.value === 'COUPLE20') {
                 const payTotal2 = (payTotal * 20) / 100;
                 grandTotal.innerText = payTotal - payTotal2;
@@ -91,16 +90,16 @@ for (const seat of allSeat) {
             else {
                 payTotal === grandTotal;
             }
-            
+
         })
 
     });
-    
 
-    
-    
-    
-    
+
+
+
+
+
 }
 
 // next button
@@ -119,7 +118,7 @@ const nextBtn = document.getElementById('next-btn').addEventListener('click', fu
         modal.classList.add('hidden');
     })
 
-    
+
 
 })
 
