@@ -301,9 +301,9 @@
 
                     </div>
                     <!-- have a coupon -->
-                    <div class="bg-white flex justify-between items-center mt-6">
+                    <div id="coupon-div" class="bg-white flex justify-between items-center mt-6">
                         <input id="coupon-input" class="p-3 rounded-xl" type="text" placeholder="Have a coupon?">
-                        <button id="apply-btn" class="btn bg-[#1DD100] text-white">Apply</button>
+                        <button id="apply-btn" class="disabled btn bg-[#1DD100] text-white">Apply</button>
                     </div>
                     <!-- Grand total -->
                     
@@ -319,16 +319,16 @@
                     <hr class="mt-2">
                     <div class="mt-6">
                         <p class="text-lg font-medium pb-4">Phone number*</p>
-                        <input class="p-3 w-full rounded-lg" type="text" placeholder="Enter your phone number">
+                        <input id="phone-number" class="p-3 w-full rounded-lg" type="number" placeholder="Enter your phone number">
                     </div>
                     <hr class="mt-2">
                     <div class="mt-3">
                         <p class="text-lg font-medium pb-4">Email Id*</p>
-                        <input class="p-3 w-full rounded-lg" type="text" placeholder="Enter your Email">
+                        <input class="p-3 w-full rounded-lg" type="email" placeholder="Enter your Email">
                     </div>
                     <hr class="mt-2">
                     <div class="mt-4">
-                        <button id="next-btn" class="disable btn w-full bg-[#1DD100] text-white">Next</button>
+                        <button id="next-btn" class=" btn w-full bg-[#1DD100] text-white">Next</button>
                     </div>
                     <div class="flex justify-between mt-6">
                         <p class="border-b-2">Terms and Conditions</p>

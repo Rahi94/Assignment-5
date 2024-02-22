@@ -15,10 +15,13 @@ let payTotal = 0;
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
         seat.classList.add('bg-green-400');
+        
+        
         count = count - 1;
         document.getElementById('seats-left').innerText = count;
         seatCount = seatCount + 1;
         document.getElementById('seat-count').innerText = seatCount;
+        // return seat;
 
 
         // create element
@@ -43,6 +46,7 @@ for (const seat of allSeat) {
 
 
         appendDiv.appendChild(createDiv);
+        
 
 
         // total price calculation part
@@ -53,32 +57,50 @@ for (const seat of allSeat) {
 
         priceTotal.innerText = payTotal;
         grandTotal.innerText = payTotal;
+        
+        
         // coupon section
         const applyCoupon = document.getElementById('apply-btn').addEventListener('click', function () {
             const couponInput = document.getElementById('coupon-input');
             const grandTotal = document.getElementById('grand-total');
 
 
-            if (couponInput.value === 'NEW15') {
+            if (couponInput.value === 'NEW15' && payTotal >= 2200) {
+                const applyBtn = document.getElementById('apply-btn');
+                applyBtn.classList.remove('disabled', 'bg-gray-300');
+                applyBtn.classList.add('bg-green-400')
                 const payTotal1 = (payTotal * 15) / 100
                 grandTotal.innerText = payTotal - payTotal1;
+                const couponDiv = document.getElementById('coupon-div');
+                couponDiv.classList.add('hidden');
                 return grandTotal.innerText;
 
             }
+            
             else if (couponInput.value === 'COUPLE20') {
                 const payTotal2 = (payTotal * 20) / 100;
                 grandTotal.innerText = payTotal - payTotal2;
+                const couponDiv = document.getElementById('coupon-div');
+                couponDiv.classList.add('hidden');
             }
             else {
-
                 payTotal === grandTotal;
             }
+            
         })
 
     });
+
+    
+    
+    
+    
 }
 
+// next button
 const nextBtn = document.getElementById('next-btn').addEventListener('click', function () {
+
+    const phoneNumber = document.getElementById('phone-number')
 
     const mainSection = document.getElementById('main-section');
     mainSection.classList.add('hidden');
@@ -91,5 +113,9 @@ const nextBtn = document.getElementById('next-btn').addEventListener('click', fu
         modal.classList.add('hidden');
     })
 
+    
+
 })
+
+
 
